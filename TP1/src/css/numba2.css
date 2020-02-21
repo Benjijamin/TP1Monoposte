@@ -1,0 +1,20 @@
+.list-cell {
+	-fx-control-inner-background: rgb(0.15, 0.15, .0 .15);
+	-fx-text-fill: white;
+}
+
+.valeur {
+	-fx-text-fill: red;
+	-fx-background-radius: 15;
+	-fx-border-radius: 15;
+}
+
+.description {
+	-fx-background-radius: 15;
+	-fx-border-radius: 15;
+	-fx-text-alignment: top;
+}
+
+.text-area:centered .text{
+	
+}
