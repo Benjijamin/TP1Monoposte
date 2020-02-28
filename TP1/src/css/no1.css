@@ -1,14 +1,28 @@
-.test{
--fx-background-color : blue;
-}
-
-.test2{
--fx-background-color : red
-}
-
-.test3{
--fx-background-color : cyan;
+.canvas{
+-fx-background-color : #FEFF99;
 -fx-padding: 10px;
+-fx-border-color: blue;
 -fx-border-insets: 10px;
+-fx-border-width: 3px;
 -fx-background-insets: 10px;
+}
+
+#droite{
+	-fx-padding: 10 25 15 15;
+}
+
+#bottom{
+	-fx-padding: 20 0 40 120;
+	-fx-spacing: 50;
+}
+
+#bottom .button {
+    -fx-background-color: 
+        linear-gradient(#48eefa 0%, #588cd6 50%, #1e4985 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
 }

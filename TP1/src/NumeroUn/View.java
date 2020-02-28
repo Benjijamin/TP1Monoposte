@@ -7,12 +7,15 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -21,14 +24,14 @@ public class View extends Application {
 	public void start(Stage stage) {
 		BorderPane bp = new BorderPane();
 		stage.setTitle("Dessin de formes");
-		stage.setMinWidth(500);
-		stage.setMinHeight(500);
+		stage.setMinWidth(830);
+		stage.setMinHeight(680);
 		// calls
 		bp.setBottom(bottom());
 		bp.setRight(right());
 		bp.setCenter(center());
 
-		Scene scene = new Scene(bp, 800, 600);
+		Scene scene = new Scene(bp);
 		scene.getStylesheets().setAll(this.getClass().getResource("/css/no1.css").toString());
 		stage.setScene(scene);
 		stage.show();
@@ -57,18 +60,10 @@ public class View extends Application {
 		// Couleurs
 		Label labCouleur = new Label("Couleur");
 
-		ObservableList<String> olCouleurText = FXCollections.observableArrayList(
-				"Orange",
-				"Rouge",
-				"Bleu",
-				"Rose",
-				"Jaune",
-				"Vert",
-				"Mauve");
-		ComboBox<String> cbCouleur = new ComboBox<String>(olCouleurText);
-		cbCouleur.getSelectionModel().selectFirst();
-
-		VBox couleurs = new VBox(labCouleur, cbCouleur);
+		ColorPicker cpCouleur = new ColorPicker();
+		cpCouleur.setPrefWidth(250);
+		
+		VBox couleurs = new VBox(labCouleur, cpCouleur);
 
 		
 		// Effet
@@ -92,7 +87,7 @@ public class View extends Application {
 		VBox vbPosy = new VBox(labPosy, tfPosy);
 
 		HBox position = new HBox(vbPosx, vbPosy);
-		position.setSpacing(75);
+		position.setSpacing(40);
 		position.setPadding(new Insets(0, 30, 0, 30));
 
 		
@@ -102,18 +97,18 @@ public class View extends Application {
 		Label labCoteC = new Label("Cote c");
 
 		TextField tfCoteA = new TextField();
-		tfCoteA.setMaxWidth(50);
+		tfCoteA.setMaxWidth(40);
 		TextField tfCoteB = new TextField();
-		tfCoteB.setMaxWidth(50);
+		tfCoteB.setMaxWidth(40);
 		TextField tfCoteC = new TextField();
-		tfCoteC.setMaxWidth(50);
+		tfCoteC.setMaxWidth(40);
 
 		VBox vbCoteA = new VBox(labCoteA, tfCoteA);
 		VBox vbCoteB = new VBox(labCoteB, tfCoteB);
 		VBox vbCoteC = new VBox(labCoteC, tfCoteC);
 
 		HBox cote = new HBox(vbCoteA, vbCoteB, vbCoteC);
-		cote.setSpacing(33);
+		cote.setSpacing(30);
 		cote.setPadding(new Insets(0,12,0,12));
 
 		
@@ -127,7 +122,9 @@ public class View extends Application {
 		
 		//addAll
 		controls.getChildren().addAll(formes, couleurs, effet, position, cote, opacite);
+		
 		controls.setPrefWidth(250);
+		controls.setId("droite");
 		return controls;
 	}
 
@@ -139,8 +136,11 @@ public class View extends Application {
 		Button quit = new Button("Quitter");
 
 		bot.getChildren().addAll(gen, re, quit);
-
+		
+		
+		
 		bot.setPrefHeight(55);
+		bot.setId("bottom");
 		return bot;
 	}
 
@@ -148,12 +148,14 @@ public class View extends Application {
 		Pane centre = new Pane();
 		Circle c = new Circle();
 
-		c.setRadius(90);
+		c.setRadius(120);
 		c.setCenterX(275);
-		c.setCenterY(272.5);
+		c.setCenterY(275);
+		c.setFill(Color.RED);
 
 		centre.getChildren().add(c);
-		centre.getStyleClass().add("test3");
+		centre.getStyleClass().add("canvas");
+		centre.setMinSize(550,550);
 
 		return centre;
 	}
