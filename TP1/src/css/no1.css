@@ -1,0 +1,14 @@
+.test{
+-fx-background-color : blue;
+}
+
+.test2{
+-fx-background-color : red
+}
+
+.test3{
+-fx-background-color : cyan;
+-fx-padding: 10px;
+-fx-border-insets: 10px;
+-fx-background-insets: 10px;
+}
