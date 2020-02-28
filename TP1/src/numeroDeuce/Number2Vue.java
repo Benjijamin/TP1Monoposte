@@ -1,6 +1,5 @@
 package numeroDeuce;
 
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Orientation;
@@ -20,27 +19,28 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
 
-public class Number2 extends Application {
+public class Number2Vue {
+	private Scene scene;
 
-	@Override
-	public void start(Stage stage) {
+	public Number2Vue() {
+		construireInterface();
+	}
+
+	private void construireInterface() {
 		BorderPane bp = new BorderPane();
 		bp.setCenter(center());
 		bp.setTop(top());
 		bp.setLeft(left());
-		stage.setTitle("Suivi des travaux");
-		Scene scene = new Scene(bp, 1000, 550);
+		scene = new Scene(bp, 1000, 550);
 		scene.getStylesheets().setAll(this.getClass().getResource("/css/numba2.css").toString());
-		stage.setScene(scene);
-		stage.show();
-
 	}
 
-	private VBox center() {
+	public Scene getScene() {
+		return scene;
+	}
+
+	private SplitPane center() {
 
 		VBox v = new VBox();
 		VBox vb = new VBox();
@@ -50,8 +50,7 @@ public class Number2 extends Application {
 		TextField desc = new TextField();
 		TextField name = new TextField();
 
-		desc.setPrefHeight(200);
-
+		// Table
 		TableView tab = new TableView();
 
 		v.setSpacing(20);
@@ -69,25 +68,28 @@ public class Number2 extends Application {
 		tab.getItems().add(new Valeur("TT-2", "Alexandre", "Programmation de l'interface"));
 		tab.getItems().add(new Valeur("TT-3", "Julie", "Programmation des évênements"));
 
-		h.setPrefHeight(10);
+		// zone pour le nom
 		name.setText("TT-1");
 		name.getStyleClass().add("valeur");
 		Label Lnom = new Label("nom :   ");
 		Lnom.getStyleClass().add("lnom");
 		h.getChildren().addAll(Lnom, name);
+
+		// zone pour description
 		desc.setText("Conception de l'interface");
 		desc.getStyleClass().add("description");
 		desc.setAlignment(Pos.TOP_LEFT);
 		Label Ldesc = new Label("Description: ");
 		Ldesc.getStyleClass().add("ldesc");
-		v.getChildren().addAll(h,Ldesc , desc);
+		desc.setPrefHeight(200);
+		v.getChildren().addAll(h, Ldesc, desc);
 
-		v.setPrefHeight(0);
+		tab.setMaxHeight(200);
+		tab.setMinHeight(200);
 
 		s.getItems().addAll(tab, v);
 
-		vb.getChildren().add(s);
-		return vb;
+		return s;
 
 	}
 
@@ -95,6 +97,8 @@ public class Number2 extends Application {
 		AnchorPane ap = new AnchorPane();
 		ap.setPrefHeight(60);
 		ap.getStyleClass().add("Anchor");
+
+		// image
 		Image img = new Image("/css/SuiviTp.png");
 		ImageView Vimg = new ImageView(img);
 
@@ -128,12 +132,6 @@ public class Number2 extends Application {
 		v.getChildren().add(lv);
 		v.getStyleClass().add("p");
 		return v;
-
-	}
-
-	public static void main(String[] args) {
-
-		Application.launch(args);
 
 	}
 
