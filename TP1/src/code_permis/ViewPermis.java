@@ -1,6 +1,5 @@
 package code_permis;
 
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Orientation;
@@ -8,80 +7,127 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 
-public class ViewPermis extends Application
+public class ViewPermis
 {
-	@Override
-	public void start(Stage stage) throws Exception {
+	private Scene scene;
+	public ViewPermis() {
+		construireInterface();
+	}
+	
+	private void construireInterface(){
 		BorderPane bp = new BorderPane();
-		stage.setTitle("Permis d'animaux");
-		// calls
+		
 		bp.setTop(top());
 		bp.setLeft(left());
 		bp.setCenter(center());
 		
-		Scene scene = new Scene(bp);
+		scene = new Scene(bp);
 		scene.getStylesheets().setAll(this.getClass().getResource("/css/no3.css").toString());
-		stage.setScene(scene);
-		stage.show();
-
 	}
 	
-	private HBox top() {
-		HBox top = new HBox();
+	public Scene getScene() {
+		return scene;
+	}
+	
+	private AnchorPane top() {
+		AnchorPane top = new AnchorPane();
+		top.setMinHeight(55);
+		top.setId("top");
 		
 		Label labApp = new Label("Permis D'animaux");
+		labApp.setId("titre");
+		
 		Button nouveau = new Button("Nouveau");
 		Button enregistrer = new Button("Enregistrer");
 		Button quitter = new Button("Quitter");
+
+		AnchorPane.setLeftAnchor(labApp, 15d);
+		AnchorPane.setTopAnchor(labApp, 10d);
+		
+		AnchorPane.setRightAnchor(nouveau, 175d);
+		AnchorPane.setTopAnchor(nouveau, 15d);
+		AnchorPane.setRightAnchor(enregistrer, 85d);
+		AnchorPane.setTopAnchor(enregistrer, 15d);
+		AnchorPane.setRightAnchor(quitter, 15d);
+		AnchorPane.setTopAnchor(quitter,15d);
+		
+		
 		
 		top.getChildren().addAll(labApp,nouveau,enregistrer,quitter);
-		top.setId("top");
 		
 		return top;
 	}
 	
 	private VBox left() {
 		VBox left = new VBox();
-		
+		left.setId("left");
 		Label labPermis = new Label("Liste des permis");
 		
 		ObservableList<String> olPermis = FXCollections.observableArrayList("Permis 1","Permis 2","Permis 3","Permis 4");
 		ListView<String> lvPermis = new ListView<String>(olPermis);
+		lvPermis.setPrefWidth(150);
+		lvPermis.setMinWidth(150);
+		lvPermis.prefHeightProperty().bind(left.heightProperty());
 		
 		left.getChildren().addAll(labPermis,lvPermis);
 		
 		return left;
 	}
 	
-	private VBox center() {
-		VBox center = new VBox();
-		
-		Pane pTable = new Pane();
+	private SplitPane center() {
+		SplitPane center = new SplitPane();
+		center.setId("center");
+		center.setOrientation(Orientation.VERTICAL);
 		
 		
 		//TableView
 		
 		TableView<Permis> tvPermis = new TableView<Permis>();
+
+		TableColumn<Permis,String> col1 = new TableColumn<Permis,String>("noPermis");
+		col1.setCellValueFactory(new PropertyValueFactory<Permis, String>("noPermis"));
+
+		TableColumn<Permis,String> col2 = new TableColumn<Permis,String>("dateDebutPermis");
+		col2.setCellValueFactory(new PropertyValueFactory<Permis, String>("dateDebutPermis"));
+
+		TableColumn<Permis,String> col3 = new TableColumn<Permis,String>("dateFinPermis");
+		col3.setCellValueFactory(new PropertyValueFactory<Permis, String>("dateFinPermis"));
+
+		TableColumn<Permis,String> col4 = new TableColumn<Permis,String>("typePermis");
+		col4.setCellValueFactory(new PropertyValueFactory<Permis, String>("typePermis"));
+
+		TableColumn<Permis,String> col5 = new TableColumn<Permis,String>("nom");
+		col5.setCellValueFactory(new PropertyValueFactory<Permis, String>("nom"));
+
+		TableColumn<Permis,String> col6 = new TableColumn<Permis,String>("sexe");
+		col6.setCellValueFactory(new PropertyValueFactory<Permis, String>("sexe"));
+
+		TableColumn<Permis,String> col7 = new TableColumn<Permis,String>("couleur");
+		col7.setCellValueFactory(new PropertyValueFactory<Permis, String>("couleur"));
+
+		TableColumn<Permis,String> col8 = new TableColumn<Permis,String>("dateNaissance");
+		col8.setCellValueFactory(new PropertyValueFactory<Permis, String>("dateNaissance"));
+
+		TableColumn<Permis,String> col9 = new TableColumn<Permis,String>("vaccination");
+		col9.setCellValueFactory(new PropertyValueFactory<Permis, String>("vaccination"));
+
+		TableColumn<Permis,String> col10 = new TableColumn<Permis,String>("sterelisation");
+		col10.setCellValueFactory(new PropertyValueFactory<Permis, String>("sterelisation"));
+
+		TableColumn<Permis,String> col11 = new TableColumn<Permis,String>("poids");
+		col11.setCellValueFactory(new PropertyValueFactory<Permis, String>("poids"));
+
+		TableColumn<Permis,String> col12 = new TableColumn<Permis,String>("micropuce");
+		col12.setCellValueFactory(new PropertyValueFactory<Permis, String>("micropuce"));
+
+		TableColumn<Permis,String> col13 = new TableColumn<Permis,String>("dangereux");
+		col13.setCellValueFactory(new PropertyValueFactory<Permis, String>("dangereux"));
 		
-		TableColumn<Permis,String> col1 = new TableColumn<Permis,String>("colonne 1");
-		col1.setCellValueFactory(new PropertyValueFactory("colonne1"));
+		tvPermis.getColumns().setAll(col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11,col12,col13);
 		
-		TableColumn<Permis,String> col2 = new TableColumn<Permis,String>("colonne 2");
-		col2.setCellValueFactory(new PropertyValueFactory("colonne2"));
-		
-		TableColumn<Permis,String> col3 = new TableColumn<Permis,String>("colonne 3");
-		col3.setCellValueFactory(new PropertyValueFactory("colonne3"));
-		
-		TableColumn<Permis,String> col4 = new TableColumn<Permis,String>("colonne 4");
-		col4.setCellValueFactory(new PropertyValueFactory("colonne4"));
-		
-		tvPermis.getColumns().setAll(col1,col2,col3,col4);
-		
-		pTable.getChildren().add(tvPermis);
-		tvPermis.setPrefHeight(200);
-		
+		tvPermis.setMinHeight(100);
+		tvPermis.setMaxHeight(100);
 		
 		//Controls
 		
@@ -99,6 +145,7 @@ public class ViewPermis extends Application
 		Label lPoids = new Label("Poids(Kg)");
 
 		TextField tfNoPermis = new TextField("1234");
+		tfNoPermis.setPrefWidth(70);
 		TextField tfNom = new TextField("Normandin");
 		TextField tfCouleur = new TextField("Noir");
 		TextField tfPoids = new TextField("10Kg");
@@ -107,8 +154,20 @@ public class ViewPermis extends Application
 		DatePicker dpDateFinPermis = new DatePicker();
 		DatePicker dpDateNaissance = new DatePicker();
 		
-		ComboBox cbTerritoireGardien = new ComboBox();
-		ComboBox cbTypePermis = new ComboBox();
+		ObservableList<String> olTerritoire = FXCollections.observableArrayList(
+				"Saint-Vincent-de-Paul",
+				"Duvernay",
+				"Sainte-Dorothée",
+				"Sainte-Rose",
+				"Chomedey",
+				"Laval-des-Rapides");
+		
+		ObservableList<String> olType = FXCollections.observableArrayList(
+				"Chien",
+				"Chat");
+		
+		ComboBox<String> cbTerritoireGardien = new ComboBox<String>(olTerritoire);
+		ComboBox<String> cbTypePermis = new ComboBox<String>(olType);
 		
 		CheckBox chbVaccination = new CheckBox("Vaccination");
 		CheckBox chbSterelisation = new CheckBox("Sterelisation");
@@ -120,7 +179,7 @@ public class ViewPermis extends Application
 		
 		Separator sep = new Separator();
 		sep.setOrientation(Orientation.HORIZONTAL);
-		sep.setPrefWidth(700);
+		sep.setPrefWidth(1050);
 			
 		
 		apEdit.getChildren().addAll(
@@ -243,24 +302,10 @@ public class ViewPermis extends Application
 		AnchorPane.setLeftAnchor(tfPoids, 350d);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		center.getChildren().addAll(pTable,apEdit);
-		
+		center.getItems().addAll(tvPermis,apEdit);
 		return center;
 	}
 	
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
+	
 
 }

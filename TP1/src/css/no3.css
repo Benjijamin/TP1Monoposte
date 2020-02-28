@@ -1,4 +1,15 @@
+#titre{
+	-fx-font-size:20;
+}
+
 #top{
-	-fx-padding: 15px;
-	
+	-fx-background-color: #4ec6d9;
+}
+
+#center{
+	-fx-background-color: lightblue;
+}
+
+#left .label{
+	-fx-translate-x: 25;
 }

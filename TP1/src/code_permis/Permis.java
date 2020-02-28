@@ -1,49 +1,141 @@
 package code_permis;
 
 public class Permis {
-	private String test1;
-	private String test2;
-	private String test3;
-	private String test4;
-	
-	public Permis(String s1,String s2,String s3, String s4) {
-		this.test1 = s1;
-		this.test2 = s2;
-		this.test3= s3;
-		this.test4 = s4;
+	private String noPermis;
+	private String dateDebutPermis;
+	private String dateFinPermis;
+	private String typePermis;
+	private String nom;
+	private String sexe;
+	private String couleur;
+	private String dateNaissance;
+	private String vaccination;
+	private String sterelisation;
+	private String poids;
+	private String micropuce;
+	private String dangereux;
+
+	public Permis(String noPermis, String dateDebutPermis, String dateFinPermis, String typePermis, String nom,
+			String sexe, String couleur, String dateNaissance, String vaccination, String sterelisation, String poids,
+			String micropuce, String dangereux) {
+		super();
+		this.noPermis = noPermis;
+		this.dateDebutPermis = dateDebutPermis;
+		this.dateFinPermis = dateFinPermis;
+		this.typePermis = typePermis;
+		this.nom = nom;
+		this.sexe = sexe;
+		this.couleur = couleur;
+		this.dateNaissance = dateNaissance;
+		this.vaccination = vaccination;
+		this.sterelisation = sterelisation;
+		this.poids = poids;
+		this.micropuce = micropuce;
+		this.dangereux = dangereux;
 	}
 
-	public String getTest1() {
-		return test1;
+	public String getNoPermis() {
+		return noPermis;
 	}
 
-	public void setTest1(String test1) {
-		this.test1 = test1;
+	public void setNoPermis(String noPermis) {
+		this.noPermis = noPermis;
 	}
 
-	public String getTest2() {
-		return test2;
+	public String getDateDebutPermis() {
+		return dateDebutPermis;
 	}
 
-	public void setTest2(String test2) {
-		this.test2 = test2;
+	public void setDateDebutPermis(String dateDebutPermis) {
+		this.dateDebutPermis = dateDebutPermis;
 	}
 
-	public String getTest3() {
-		return test3;
+	public String getDateFinPermis() {
+		return dateFinPermis;
 	}
 
-	public void setTest3(String test3) {
-		this.test3 = test3;
+	public void setDateFinPermis(String dateFinPermis) {
+		this.dateFinPermis = dateFinPermis;
 	}
 
-	public String getTest4() {
-		return test4;
+	public String getTypePermis() {
+		return typePermis;
 	}
 
-	public void setTest4(String test4) {
-		this.test4 = test4;
+	public void setTypePermis(String typePermis) {
+		this.typePermis = typePermis;
 	}
-	
-	
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getSexe() {
+		return sexe;
+	}
+
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
+	}
+
+	public String getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+	public String getDateNaissance() {
+		return dateNaissance;
+	}
+
+	public void setDateNaissance(String dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+	public String getVaccination() {
+		return vaccination;
+	}
+
+	public void setVaccination(String vaccination) {
+		this.vaccination = vaccination;
+	}
+
+	public String getSterelisation() {
+		return sterelisation;
+	}
+
+	public void setSterelisation(String sterelisation) {
+		this.sterelisation = sterelisation;
+	}
+
+	public String getPoids() {
+		return poids;
+	}
+
+	public void setPoids(String poids) {
+		this.poids = poids;
+	}
+
+	public String getMicropuce() {
+		return micropuce;
+	}
+
+	public void setMicropuce(String micropuce) {
+		this.micropuce = micropuce;
+	}
+
+	public String getDangereux() {
+		return dangereux;
+	}
+
+	public void setDangereux(String dangereux) {
+		this.dangereux = dangereux;
+	}
+
 }
