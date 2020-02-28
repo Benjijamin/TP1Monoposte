@@ -199,7 +199,11 @@ Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
  [Xlint:cantFindType]
 2020-02-28 08:09:33,994 ERROR [Worker-5: Decoration Calculation] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
  [Xlint:cantFindType]
+<<<<<<< HEAD
 2020-02-28 13:34:13,206 ERROR [Worker-1: Decoration Calculation] - Statistics - Statistics file `C:\Users\1433294\.scalaide\statistics` is corrupted. A new one is being created. Corrupted content was:
+=======
+2020-02-28 10:55:48,877 ERROR [Worker-4: Decoration Calculation] - Statistics - Statistics file `C:\Users\1532716\.scalaide\statistics` is corrupted. A new one is being created. Corrupted content was:
+>>>>>>> dc71b863e2d5c1cbcb6cabe17352f33f4e83b76c
 
 com.cedarsoftware.util.io.JsonIoException: error parsing JSON value
 	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:529)
@@ -262,9 +266,20 @@ Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
 	at com.cedarsoftware.util.io.JsonParser.readValue(JsonParser.java:278)
 	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:521)
 	... 54 more
+<<<<<<< HEAD
 2020-02-28 13:34:32,281 ERROR [ModalContext] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
  [Xlint:cantFindType]
 2020-02-28 13:34:34,154 ERROR [Worker-13: Building workspace] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
  [Xlint:cantFindType]
 2020-02-28 13:34:40,366 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
  [Xlint:cantFindType]
+=======
+2020-02-28 10:58:07,153 ERROR [Worker-13: C:\Users\1532716\Desktop\TP1Monoposte\TP1] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-02-28 10:58:09,159 ERROR [Worker-16: Building workspace] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-02-28 10:58:15,538 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-02-28 11:17:28,419 ERROR [ModalContext] - System.err - Unable to construct FQN from 'src.NumeroUn'
+2020-02-28 12:24:57,723 ERROR [ModalContext] - System.err - Unable to construct FQN from 'src.numero3'
+>>>>>>> dc71b863e2d5c1cbcb6cabe17352f33f4e83b76c
