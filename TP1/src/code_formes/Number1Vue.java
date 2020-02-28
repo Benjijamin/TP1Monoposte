@@ -1,6 +1,5 @@
 package code_formes;
 
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -15,25 +14,28 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 
-public class View extends Application {
-	@Override
-	public void start(Stage stage) {
+public class Number1Vue {
+	private Scene scene;
+
+	public Number1Vue() {
+		construireInterface();
+	}
+
+	private void construireInterface() {
 		BorderPane bp = new BorderPane();
-		stage.setTitle("Dessin de formes");
-		stage.setMinWidth(830);
-		stage.setMinHeight(680);
 		// calls
 		bp.setBottom(bottom());
 		bp.setRight(right());
 		bp.setCenter(center());
 		bp.setStyle("-fx-background-color:azure");
-		Scene scene = new Scene(bp);
+		scene = new Scene(bp);
 		scene.getStylesheets().setAll(this.getClass().getResource("/css/no1.css").toString());
-		stage.setScene(scene);
-		stage.show();
 
+	}
+
+	public Scene getScene() {
+		return scene;
 	}
 
 	private VBox right() {
@@ -44,26 +46,20 @@ public class View extends Application {
 		// Formes
 		Label labFormes = new Label("Formes");
 
-		ObservableList<String> olFormes = FXCollections.observableArrayList(
-				"Ovale",
-				"Rectangle",
-				"Triangle",
-				"Ligne");
+		ObservableList<String> olFormes = FXCollections.observableArrayList("Ovale", "Rectangle", "Triangle", "Ligne");
 		ListView<String> listeFormes = new ListView<String>(olFormes);
 		listeFormes.setPrefHeight(150);
 
 		VBox formes = new VBox(labFormes, listeFormes);
 
-		
 		// Couleurs
 		Label labCouleur = new Label("Couleur");
 
 		ColorPicker cpCouleur = new ColorPicker();
 		cpCouleur.setPrefWidth(250);
-		
+
 		VBox couleurs = new VBox(labCouleur, cpCouleur);
 
-		
 		// Effet
 		Label labEffet = new Label("Effet");
 
@@ -71,7 +67,6 @@ public class View extends Application {
 
 		VBox effet = new VBox(labEffet, cbEffet);
 
-		
 		// Position
 		Label labPosx = new Label("Position x");
 		Label labPosy = new Label("Position y");
@@ -88,7 +83,6 @@ public class View extends Application {
 		position.setSpacing(30);
 		position.setPadding(new Insets(0, 30, 0, 30));
 
-		
 		// Cote
 		Label labCoteA = new Label("Cote a");
 		Label labCoteB = new Label("Cote b");
@@ -107,9 +101,8 @@ public class View extends Application {
 
 		HBox cote = new HBox(vbCoteA, vbCoteB, vbCoteC);
 		cote.setSpacing(30);
-		cote.setPadding(new Insets(0,12,0,12));
+		cote.setPadding(new Insets(0, 12, 0, 12));
 
-		
 		// Opacite
 		Label labOpacite = new Label("Opacite");
 
@@ -117,10 +110,9 @@ public class View extends Application {
 
 		VBox opacite = new VBox(labOpacite, sliderOpacite);
 
-		
-		//addAll
+		// addAll
 		controls.getChildren().addAll(formes, couleurs, effet, position, cote, opacite);
-		
+
 		controls.setPrefWidth(250);
 		controls.setId("droite");
 		return controls;
@@ -134,9 +126,7 @@ public class View extends Application {
 		Button quit = new Button("Quitter");
 
 		bot.getChildren().addAll(gen, re, quit);
-		
-		
-		
+
 		bot.setPrefHeight(55);
 		bot.setId("bottom");
 		return bot;
@@ -153,15 +143,9 @@ public class View extends Application {
 
 		centre.getChildren().add(c);
 		centre.getStyleClass().add("canvas");
-		centre.setMinSize(550,550);
+		centre.setMinSize(550, 550);
 
 		return centre;
-	}
-
-	public static void main(String[] args) {
-
-		Application.launch(args);
-
 	}
 
 }

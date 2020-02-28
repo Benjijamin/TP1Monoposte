@@ -1,14 +1,13 @@
 package numeroDeuce;
 
 public class Valeur {
-	
+
 	private String nom;
 	private String responsable;
 	private String tache;
-	
+
 	public Valeur() {
-		
-		
+
 	}
 
 	public Valeur(String nom, String responsable, String tache) {
@@ -41,7 +40,5 @@ public class Valeur {
 	public void setTache(String tache) {
 		this.tache = tache;
 	}
-	
-	
 
 }

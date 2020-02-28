@@ -217,7 +217,11 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-02-28 11:17:12.696
 !MESSAGE No repository found at http://apache.forsale.plus.
 >>>>>>> dc71b863e2d5c1cbcb6cabe17352f33f4e83b76c
+<<<<<<< HEAD
 !SESSION 2020-02-28 14:02:36.250 -----------------------------------------------
+=======
+!SESSION 2020-02-28 14:11:25.092 -----------------------------------------------
+>>>>>>> 3146d586e236a8695bde683748aadb66f377fd4e
 eclipse.buildId=4.12.0.I20190605-1800
 java.version=1.8.0_221
 java.vendor=Oracle Corporation
@@ -225,12 +229,21 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_CA
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.egit.core 1 0 2020-02-28 14:02:51.793
 !MESSAGE Using Apache MINA sshd as ssh client.
 
 !ENTRY org.eclipse.jface 2 0 2020-02-28 14:02:53.057
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2020-02-28 14:02:53.057
+=======
+!ENTRY org.eclipse.egit.core 1 0 2020-02-28 14:11:33.615
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface 2 0 2020-02-28 14:11:34.931
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-02-28 14:11:34.931
+>>>>>>> 3146d586e236a8695bde683748aadb66f377fd4e
 !MESSAGE A conflict occurred for CTRL+F4:
 Binding(CTRL+F4,
 	ParameterizedCommand(Command(org.eclipse.ui.file.close,Close,
@@ -249,7 +262,11 @@ Binding(CTRL+F4,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.ui 4 0 2020-02-28 14:02:55.422
+=======
+!ENTRY org.eclipse.ui 4 0 2020-02-28 14:11:37.462
+>>>>>>> 3146d586e236a8695bde683748aadb66f377fd4e
 !MESSAGE Unable to restore working set state.
 !STACK 1
 org.eclipse.ui.WorkbenchException: Le contenu des éléments doit inclure un balisage ou des caractères au format correct.
@@ -374,7 +391,11 @@ Caused by: org.xml.sax.SAXParseException; lineNumber: 13; columnNumber: 2; Le co
 	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
 	at org.eclipse.ui.XMLMemento.createReadRoot(XMLMemento.java:117)
 	... 103 more
+<<<<<<< HEAD
 !SUBENTRY 1 org.eclipse.ui 4 0 2020-02-28 14:02:55.422
+=======
+!SUBENTRY 1 org.eclipse.ui 4 0 2020-02-28 14:11:37.462
+>>>>>>> 3146d586e236a8695bde683748aadb66f377fd4e
 !MESSAGE Le contenu des éléments doit inclure un balisage ou des caractères au format correct.
 !STACK 0
 org.xml.sax.SAXParseException; lineNumber: 13; columnNumber: 2; Le contenu des éléments doit inclure un balisage ou des caractères au format correct.
@@ -497,12 +518,51 @@ org.xml.sax.SAXParseException; lineNumber: 13; columnNumber: 2; Le contenu des �
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.egit.ui 2 0 2020-02-28 14:02:59.178
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\1532716'. If this is
+=======
+!ENTRY org.eclipse.egit.ui 2 0 2020-02-28 14:11:41.057
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\1433294'. If this is
+>>>>>>> 3146d586e236a8695bde683748aadb66f377fd4e
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-02-28 14:06:59.616
+=======
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-02-28 14:11:54.285
+!MESSAGE C:\Program Files\Git\mingw64\etc\.probe-8b893afa-aa54-4997-9d8a-6590d03f77d5
+!STACK 0
+java.nio.file.AccessDeniedException: C:\Program Files\Git\mingw64\etc\.probe-8b893afa-aa54-4997-9d8a-6590d03f77d5
+	at sun.nio.fs.WindowsException.translateToIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(Unknown Source)
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(Unknown Source)
+	at java.nio.file.Files.newByteChannel(Unknown Source)
+	at java.nio.file.Files.createFile(Unknown Source)
+	at org.eclipse.jgit.util.FS$FileStoreAttributeCache.<init>(FS.java:234)
+	at org.eclipse.jgit.util.FS$FileStoreAttributeCache.getFsTimestampResolution(FS.java:211)
+	at org.eclipse.jgit.util.FS.getFsTimerResolution(FS.java:321)
+	at org.eclipse.jgit.internal.storage.file.FileSnapshot.<init>(FileSnapshot.java:186)
+	at org.eclipse.jgit.internal.storage.file.FileSnapshot.save(FileSnapshot.java:122)
+	at org.eclipse.jgit.storage.file.FileBasedConfig.load(FileBasedConfig.java:156)
+	at org.eclipse.jgit.internal.storage.file.FileRepository.loadSystemConfig(FileRepository.java:245)
+	at org.eclipse.jgit.internal.storage.file.FileRepository.<init>(FileRepository.java:203)
+	at org.eclipse.jgit.storage.file.FileRepositoryBuilder.build(FileRepositoryBuilder.java:88)
+	at org.eclipse.jgit.storage.file.FileRepositoryBuilder.create(FileRepositoryBuilder.java:108)
+	at org.eclipse.egit.core.RepositoryCache.lookupRepository(RepositoryCache.java:58)
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:693)
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:651)
+	at org.eclipse.egit.core.project.GitProjectData.setRepositoryMappings(GitProjectData.java:465)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.connectProject(ConnectProviderOperation.java:153)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.execute(ConnectProviderOperation.java:111)
+	at org.eclipse.egit.core.internal.job.JobUtil$1.run(JobUtil.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-02-28 14:23:15.895
+>>>>>>> 3146d586e236a8695bde683748aadb66f377fd4e
 !MESSAGE No repository found at http://apache.forsale.plus.
