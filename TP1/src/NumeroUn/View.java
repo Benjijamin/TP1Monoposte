@@ -30,7 +30,7 @@ public class View extends Application {
 		bp.setBottom(bottom());
 		bp.setRight(right());
 		bp.setCenter(center());
-
+		bp.setStyle("-fx-background-color:azure");
 		Scene scene = new Scene(bp);
 		scene.getStylesheets().setAll(this.getClass().getResource("/css/no1.css").toString());
 		stage.setScene(scene);
@@ -79,15 +79,15 @@ public class View extends Application {
 		Label labPosy = new Label("Position y");
 
 		TextField tfPosx = new TextField();
-		tfPosx.setMaxWidth(50);
+		tfPosx.setMaxWidth(60);
 		TextField tfPosy = new TextField();
-		tfPosy.setMaxWidth(50);
+		tfPosy.setMaxWidth(60);
 
 		VBox vbPosx = new VBox(labPosx, tfPosx);
 		VBox vbPosy = new VBox(labPosy, tfPosy);
 
 		HBox position = new HBox(vbPosx, vbPosy);
-		position.setSpacing(40);
+		position.setSpacing(30);
 		position.setPadding(new Insets(0, 30, 0, 30));
 
 		

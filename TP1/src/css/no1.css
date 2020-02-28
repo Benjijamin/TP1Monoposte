@@ -26,3 +26,10 @@
     -fx-font-size: 14px;
     -fx-padding: 10 20 10 20;
 }
+
+.label{
+	-fx-text-fill:#0000ff;
+	-fx-font-weight: bold;
+	-fx-font-size: 12px;
+	
+}

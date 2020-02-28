@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -19,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class Number2 extends Application {
@@ -30,11 +33,10 @@ public class Number2 extends Application {
 		bp.setTop(top());
 		bp.setLeft(left());
 		stage.setTitle("Suivi des travaux");
-		Scene scene = new Scene(bp,1000,550);
+		Scene scene = new Scene(bp, 1000, 550);
 		scene.getStylesheets().setAll(this.getClass().getResource("/css/numba2.css").toString());
 		stage.setScene(scene);
 		stage.show();
-		
 
 	}
 
@@ -67,13 +69,18 @@ public class Number2 extends Application {
 		tab.getItems().add(new Valeur("TT-2", "Alexandre", "Programmation de l'interface"));
 		tab.getItems().add(new Valeur("TT-3", "Julie", "Programmation des évênements"));
 
-		h.setPrefHeight(100);
+		h.setPrefHeight(10);
 		name.setText("TT-1");
 		name.getStyleClass().add("valeur");
-		h.getChildren().addAll(new Label("nom :"), name);
+		Label Lnom = new Label("nom :   ");
+		Lnom.getStyleClass().add("lnom");
+		h.getChildren().addAll(Lnom, name);
 		desc.setText("Conception de l'interface");
 		desc.getStyleClass().add("description");
-		v.getChildren().addAll(h, new Label("nom: "), desc);
+		desc.setAlignment(Pos.TOP_LEFT);
+		Label Ldesc = new Label("Description: ");
+		Ldesc.getStyleClass().add("ldesc");
+		v.getChildren().addAll(h,Ldesc , desc);
 
 		v.setPrefHeight(0);
 
@@ -86,7 +93,8 @@ public class Number2 extends Application {
 
 	private AnchorPane top() {
 		AnchorPane ap = new AnchorPane();
-		ap.setPrefHeight(75);
+		ap.setPrefHeight(60);
+		ap.getStyleClass().add("Anchor");
 		Image img = new Image("/css/SuiviTp.png");
 		ImageView Vimg = new ImageView(img);
 
@@ -99,10 +107,10 @@ public class Number2 extends Application {
 		AnchorPane.setRightAnchor(b3, 20.0);
 		AnchorPane.setRightAnchor(b2, 90.0);
 		AnchorPane.setRightAnchor(b1, 180.0);
-		AnchorPane.setTopAnchor(b3, 30.0);
-		AnchorPane.setTopAnchor(b2, 30.0);
-		AnchorPane.setTopAnchor(b1, 30.0);
-		AnchorPane.setTopAnchor(Vimg, 30.0);
+		AnchorPane.setTopAnchor(b3, 20.0);
+		AnchorPane.setTopAnchor(b2, 20.0);
+		AnchorPane.setTopAnchor(b1, 20.0);
+		AnchorPane.setTopAnchor(Vimg, 20.0);
 
 		return ap;
 
@@ -110,7 +118,7 @@ public class Number2 extends Application {
 
 	private VBox left() {
 		VBox v = new VBox();
-		v.setPrefWidth(200);
+		v.setPrefWidth(160);
 		v.setPrefHeight(2000);
 		v.setSpacing(20);
 
@@ -124,7 +132,7 @@ public class Number2 extends Application {
 	}
 
 	public static void main(String[] args) {
-	
+
 		Application.launch(args);
 
 	}
